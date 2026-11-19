@@ -3,151 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>assingment-2</title>
+    <title>ShopEasy - Online Store</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            font-family:Arial,sans-serif;
-            background-color:rgb(225, 228, 225);
-            color:rgb(77, 22, 33)
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        }
-        .header{
-            background-color:chocolate ;
-            text-align:center;
-            color:black;
-            padding:22px 10px 16px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #222;
+}
 
-        }
-        .header h1{
-            font-size:12px;
-            margin-bottom:12px;
-        }
-        .search-box{
-            display:flex;
-            gap:10px;
-            align-items:center;
-            justify-content:center;
-        }
-        .search-box input{
-            width:250px;
-            padding:9px;
-            border:1px solid;
-            border-radius:4px;
-        }
-        .search-box button{
-            padding:9px 15px;
-            border:none;
-            border-radius:4px;
-            cursor:pointer; 
-        }
-        .navbar{
-            background-color:black;
-            font: size 140px;
-            text-decoration:none;
-            text-align: center;
-            size: 300px;
-        
-        }
-        .container{
-            max-width:1100px;
-            margin: auto;
-            padding: 18px 20px 45px;
-        }
-        .sale-banner{
-            background-color:rgb(12, 81, 145);
-            text-align:center;
-            border-radius:7px;
-            padding:35px 10px;
-            margin-bottom:45px;
-        }
-        .sale-banner h2{
-            font-size:20px;
-            margin-bottom:15px;
+/* Main Header */
+.header {
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 22px 10px 16px;
+}
 
-        }
-        .sale-banner p{font-size:14px;}
-        .product-card{
-            position:relative;
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
 
-        }
-        
-    </style>
+.header p {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input {
+    width: 250px;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-box button {
+    padding: 9px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 11px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    color: #ffcc66;
+}
+
+/* Main Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 20px 45px;
+}
+
+/* Sale Banner */
+.sale-banner {
+    background-color: #ffe493;
+    border: 2px solid #f3b43f;
+    border-radius: 7px;
+    text-align: center;
+    padding: 35px 10px;
+    margin-bottom: 45px;
+}
+
+.sale-banner h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.sale-banner p {
+    font-size: 14px;
+}
+
+/* Section Headings */
+.section-title {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* Product Cards */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    position: relative;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    width: 220px;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 65px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.product-card p {
+    font-size: 14px;
+    min-height: 38px;
+    margin-bottom: 12px;
+}
+
+.product-card button {
+    background-color: #1f1f1f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 18px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #444;
+}
+
+.sale-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Product Comparison */
+.comparison {
+    margin-top: 75px;
+}
+
+.comparison table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    text-align: center;
+}
+
+.comparison th {
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.comparison th,
+.comparison td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .navbar {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .search-box input {
+        width: 65%;
+    }
+
+    .product-container {
+        gap: 15px;
+    }
+
+    .product-card {
+        width: calc(50% - 10px);
+        padding: 12px 8px;
+    }
+
+    .product-card p {
+        font-size: 12px;
+    }
+
+    .comparison {
+        overflow-x: auto;
+    }
+
+    .comparison table {
+        min-width: 500px;
+    }
+
+    .sale-banner h2 {
+        font-size: 17px;
+    }
+}
+</style>
 </head>
 <body>
+
+    <!-- Main Header -->
     <header class="header">
         <h1>ShopEasy</h1>
         <p>Your Simple Online Store</p>
 
         <div class="search-box">
             <input type="text" placeholder="Search products...">
-            <button>Cart</button>
+            <button>Cart 🛒</button>
         </div>
     </header>
 
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        
         <a href="#home">Home</a>
-        <a href="#product">Products</a>
+        <a href="#products">Products</a>
         <a href="#categories">Categories</a>
         <a href="#offers">Offers</a>
         <a href="#contact">Contact</a>
     </nav>
+
     <main class="container" id="home">
+
+        <!-- Sale Banner -->
         <section class="sale-banner" id="offers">
-            <h2>BIG SALE-UP TO 50% OFF</h2>
+            <h2>🔥 BIG SALE - UP TO 50% OFF 🔥</h2>
             <p>Grab your favourite products today!</p>
         </section>
+
+        <!-- Products Section -->
         <section id="products">
-            <h2 class="secton-title">Our Products</h2>
+            <h2 class="section-title">Our Products</h2>
+
             <div class="product-container">
+
                 <div class="product-card">
-                    <span class="sale tag">SALE</span>
-                    <img src="#image" alt="Laptop">
+                    <span class="sale-tag">SALE</span>
+                    <img src="https://placehold.co/120x80?text=Laptop"
+                         alt="Laptop">
                     <h3>Laptop</h3>
                     <p>Powerful laptop for students and developers.</p>
-                    <h3>Rs.55000</h3>
-                    <button>Add to cart</button>
-                     </div>
+                    <h3>₹55,000</h3>
+                    <button>Add to Cart</button>
+                </div>
 
-                     <div class="product-card">
-                    <span class="sale tag">SALE</span>
-                    <img src="#image" alt="Headphones">
+                <div class="product-card">
+                    <span class="sale-tag">SALE</span>
+                    <img src="https://placehold.co/120x80?text=Headphones"
+                         alt="Headphones">
                     <h3>Headphones</h3>
                     <p>Wireless headphones with excellent sound.</p>
-                    <h3>Rs.2000</h3>
-                    <button>Add to cart</button>
-                     </div>
+                    <h3>₹2,000</h3>
+                    <button>Add to Cart</button>
+                </div>
 
-                     <div class="product-card">
-                    <span class="sale tag">SALE</span>
-                    <img src="#image" alt="Keyboard">
-                    <h3>Headphones</h3>
-                    <p>Mechanical Keyboard for programmers.</p>
-                    <h3>Rs.1500</h3>
-                    <button>Add to cart</button>
-                     </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/120x80?text=Keyboard"
+                         alt="Keyboard">
+                    <h3>Keyboard</h3>
+                    <p>Mechanical keyboard for programmers.</p>
+                    <h3>₹1,500</h3>
+                    <button>Add to Cart</button>
+                </div>
 
-                     <div class="product-card">
-                    <span class="sale tag">SALE</span>
-                    <img src="#image" alt="Smart Watch">
+                <div class="product-card">
+                    <img src="https://placehold.co/120x80?text=Smart+Watch"
+                         alt="Smart Watch">
                     <h3>Smart Watch</h3>
-                    <p>Smart watch with fitness tracking features</p>
-                    <h3>Rs.3500</h3>
-                    <button>Add to cart</button>
-                     </div>
+                    <p>Smart watch with fitness tracking features.</p>
+                    <h3>₹3,500</h3>
+                    <button>Add to Cart</button>
+                </div>
 
             </div>
         </section>
+
+        <!-- Product Comparison Table -->
         <section class="comparison" id="categories">
             <h2 class="section-title">Product Comparison</h2>
 
-            <table border="2">
-                <thead >
+            <table>
+                <thead>
                     <tr>
                         <th>Product</th>
                         <th>Price</th>
@@ -159,33 +339,38 @@
                 <tbody>
                     <tr>
                         <td>Laptop</td>
-                        <td>Rs.55000</td>
-                        <td>4.5</td>
+                        <td>₹55,000</td>
+                        <td>4.5 ⭐</td>
                         <td>Available</td>
                     </tr>
                     <tr>
                         <td>Headphones</td>
-                        <td>Rs.2000</td>
-                        <td>4.2</td>
+                        <td>₹2,000</td>
+                        <td>4.2 ⭐</td>
                         <td>Available</td>
                     </tr>
                     <tr>
                         <td>Keyboard</td>
-                        <td>Rs.1500</td>
-                        <td>4.0</td>
+                        <td>₹1,500</td>
+                        <td>4.0 ⭐</td>
                         <td>Out of Stock</td>
                     </tr>
                     <tr>
                         <td>Smart Watch</td>
-                        <td>Rs.3500</td>
-                        <td>4.3</td>
+                        <td>₹3,500</td>
+                        <td>4.3 ⭐</td>
                         <td>Available</td>
                     </tr>
                 </tbody>
             </table>
         </section>
-        
+
     </main>
-    
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2026 ShopEasy. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

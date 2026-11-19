@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #ddd;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #6558e8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #6558e8;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .hero {
+            min-height: 550px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            margin: 10px 0;
+        }
+
+        .hero p {
+            color: #666;
+            max-width: 500px;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            color: #6558e8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #6558e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #4035b7;
+            transform: translateY(-4px);
+        }
+
+        .profile {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, #9188ff, #5145c9);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 65px;
+            font-weight: bold;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .about {
+            background: #f6f7ff;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .heading h2 {
+            font-size: 35px;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            color: #555;
+            text-align: center;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-box {
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px #ddd;
+        }
+
+        .skill-box h3 {
+            margin: 10px 0;
+        }
+
+        .skill-box p {
+            color: #666;
+        }
+
+        .projects {
+            background: #f6f7ff;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-box {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid #ddd;
+        }
+
+        .projec-box:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px #ddd;
+        }
+
+        .project-image {
+            height: 160px;
+            background: linear-gradient(135deg, #7166ee, #b0aaff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content p {
+            color: #666;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .contact-info {
+            background: #f6f7ff;
+            padding: 30px;
+            border-radius: 12px;
+            flex: 1;
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+        }
+
+        footer {
+            background: #172033;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Tablet Responsive Design */
+        @media (max-width: 900px) {
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .profile {
+                width: 210px;
+                height: 210px;
+                }
+
+            .skills-container,
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">MyPortfolio.</div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <div>
+            <h3>Hello, I'm</h3>
+            <h1>Aditya Sharma</h1>
+            <h2>A <span class="highlight">Web Developer</span></h2>
+
+            <p>
+                I enjoy creating clean, responsive websites
+                and learning how technology can solve
+                real-world problems.
+            </p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+
+        <div class="profile">
+            AS
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>About <span class="highlight">Me</span></h2>
+        </div>
+
+        <p>
+            I am a motivated student interested in web development,
+            programming and emerging technologies. I enjoy turning
+            ideas into useful digital experiences. My goal is to
+            improve my technical skills and create innovative projects.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="heading">
+            <h2>My <span class="highlight">Skills</span></h2>
+            <p>Technologies and skills I am learning.</p>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill-box">
+                <h2>🌐</h2>
+                <h3>HTML</h3>
+                <p>Creating structured web pages.</p>
+            </div>
+
+            <div class="skill-box">
+                <h2>🎨</h2>
+                <h3>CSS</h3>
+                <p>Designing beautiful websites.</p>
+            </div>
+
+            <div class="skill-box">
+                <h2>🐍</h2>
+                <h3>Python</h3>
+                <p>Programming and problem solving.</p>
+            </div>
+
+            <div class="skill-box">
+                <h2>💡</h2>
+                <h3>Problem Solving</h3>
+                <p>Developing logical thinking.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="heading">
+            <h2>My <span class="highlight">Projects</span></h2>
+            <p>Some of my practice projects.</p>
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-box">
+                <div class="project-image">01</div>
+                <div class="project-content">
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        A responsive personal website
+                        created using HTML and CSS.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <div class="project-image">02</div>
+                <div class="project-content">
+                    <h3>Landing Page</h3>
+                    <p>
+                        A modern landing page designed
+                        using CSS Grid and Flexbox.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <div class="project-image">03</div>
+                <div class="project-content">
+                    <h3>Python Project</h3>
+                    <p>
+                        A programming project focused
+                        on logic and problem solving.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="heading">
+            <h2>Contact <span class="highlight">Me</span></h2>
+            <p>Let's connect and work together.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p><b>Email:</b> adityabhardwaj@0918@gmail.com</p>
+                <p><b>Location:</b> India</p>
+                <a href="mailto:your.email@example.com" class="btn">
+                    Send Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Aditya Sharma. All Rights Reserved.</p>
+        <p>Made with HTML and CSS.</p>
+    </footer>
+
+</body>
+</html>
